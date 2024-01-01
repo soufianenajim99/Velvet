@@ -4,7 +4,7 @@
     private $user = CONFIG['db_user'];
     private $pass = CONFIG['db_password'];
 
-    private $dbh;
+    public $dbh;
 
     public function __construct(){
     try{
