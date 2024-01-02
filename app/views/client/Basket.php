@@ -49,10 +49,10 @@
 
                                 </select>
                                 <div class="flex items-center space-x-4">
-                                    <p class="text-sm">259.000 ₭</p>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor"
-                                        class="h-5 w-5 cursor-pointer duration-150 hover:text-red-500">
+
+                                    <p class="text-sm">259.000 MAD</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 cursor-pointer duration-150 hover:text-red-500">
+
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                                     </svg>
                                 </div>
@@ -71,17 +71,17 @@
                 <div class=" mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
                     <div class="mb-2 flex justify-between">
                         <p class="text-gray-700">Subtotal</p>
-                        <p class="text-gray-700">$129.99</p>
+                        <p class="text-gray-700">129.99 MAD</p>
                     </div>
                     <div class="flex justify-between">
                         <p class="text-gray-700">Shipping</p>
-                        <p class="text-gray-700">$4.99</p>
+                        <p class="text-gray-700">4.99 MAD</p>
                     </div>
                     <hr class="my-4" />
                     <div class="flex justify-between">
                         <p class="text-lg font-bold">Total</p>
                         <div class="">
-                            <p class="mb-1 text-lg font-bold">$134.98 USD</p>
+                            <p class="mb-1 text-lg font-bold">134.98 MAD</p>
                             <p class="text-sm text-gray-700">including VAT</p>
                         </div>
                     </div>
