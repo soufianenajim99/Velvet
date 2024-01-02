@@ -6,8 +6,8 @@ class Home extends Controller {
         $this->Homeser= $this->service("UsersService");
     }
 
-    public function index($id){
-        $data=$this->Homeser->getusers();
-        $this->view("Home/index", $data);
+    public function index(){
+        // $data=$this->Homeser->getusers();
+        $this->view("Home/index");
     }
 }
