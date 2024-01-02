@@ -22,7 +22,7 @@
                 </a>
                 <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
                     <li><a class="hover:text-gray-200" href="#">Home</a></li>
-                    <li><a class="hover:text-gray-200" href="#">Catagory</a></li>
+                    <li><a class="hover:text-gray-200" href="#">Products</a></li>
                     <li><a class="hover:text-gray-200" href="#">Collections</a></li>
                     <li><a class="hover:text-gray-200" href="#">Contact Us</a></li>
                 </ul>
@@ -34,7 +34,7 @@
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                             </svg>
-                            <span class="sr-only">Search icon</span>
+                            <span class="sr-only">Search icon.</span>
                         </div>
                         <input type="text" id="search-navbar"
                             class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
