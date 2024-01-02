@@ -1,15 +1,13 @@
 <?php
 
-class Commande {
+class Admin{
+    private $Id_admin;
+    private $Id_user;
 
-    private $Id_commande;
-    private $Id_client;
-
-    public function __construct($id_commande, $id_client) {
-        $this->Id_commande = $id_commande;
-        $this->Id_client = $id_client;
+    public function __construct($Id_admin, $Id_user){
+        $this->Id_admin = $Id_admin;
+        $this->Id_user = $Id_user;
     }
-
     public function __get($property) {
         if (property_exists($this, $property)) {
           return $this->$property;
@@ -22,6 +20,4 @@ class Commande {
         }
     
     }
-
-
 }

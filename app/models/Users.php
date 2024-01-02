@@ -1,15 +1,19 @@
 <?php
 class User{
-    private $Id_user;
-    private $Username;
-    private $Email;
+    private $id;
+    private $FullName;
+    private $username;
     private $Password;
+    private $Adresse;
+    private $Email;
 
-    public function __construct($Id_user, $Username, $Email, $Password){
-        $this->Id_user = $Id_user;
-        $this->Username = $Username;
-        $this->Email = $Email;
+    public function __construct($id, $FullName, $username, $Password, $Adresse, $Email){
+        $this->id = $id;
+        $this->FullName = $FullName;
+        $this->username = $username;
         $this->Password = $Password;
+        $this->Adresse = $Adresse;
+        $this->Email = $Email;
     }
     public function __get($property) {
         if (property_exists($this, $property)) {

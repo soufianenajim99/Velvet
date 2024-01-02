@@ -1,4 +1,4 @@
 <?php
 
-echo "Home page here" . URLROOT."<br>";
-var_dump($data);
+echo "Home page here";
+// var_dump($data);

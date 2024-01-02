@@ -2,11 +2,11 @@
 
 class Panier {
     private $Id_panier;
-    private $Name_panier;
+    private $Id_client;
 
-    public function __construct($Id_panier, $Name_panier) {
+    public function __construct($Id_panier, $Id_client) {
         $this->Id_panier = $Id_panier;
-        $this->Name_panier = $Name_panier;
+        $this->Id_client = $Id_client;
     }
 
     public function __get($property) {

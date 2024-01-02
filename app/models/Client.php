@@ -1,15 +1,13 @@
 <?php
 
-class Commande {
-
-    private $Id_commande;
+class Client extends Users{
     private $Id_client;
+    private $Id_user;
 
-    public function __construct($id_commande, $id_client) {
-        $this->Id_commande = $id_commande;
-        $this->Id_client = $id_client;
+    public function __construct($Id_client, $Id_user){
+        $this->Id_client = $Id_client;
+        $this->Id_user = $Id_user;
     }
-
     public function __get($property) {
         if (property_exists($this, $property)) {
           return $this->$property;
@@ -22,6 +20,4 @@ class Commande {
         }
     
     }
-
-
 }
