@@ -11,9 +11,9 @@ define('APPROOT',dirname(dirname(__FILE__))) ;
 
 //for using url's
 
-define('URLROOT','http://localhost/ShieldedAssure/');
+define('URLROOT','http://localhost/Velvet/');
 
 //SITE Name
 
-define('SITENAME','ShieldedAssure');
+define('SITENAME','Velvet');
 ?>
