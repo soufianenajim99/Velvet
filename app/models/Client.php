@@ -1,12 +1,9 @@
 <?php
 
-class Client{
-    private $Id_client;
-    private $Id_user;
+class Client extends Users{
 
-    public function __construct($Id_client, $Id_user){
-        $this->Id_client = $Id_client;
-        $this->Id_user = $Id_user;
+    public function __construct($id, $FullName, $username, $Password, $Adresse, $Email){
+        parent::__construct($id,$FullName, $username, $Password, $Adresse, $Email);
     }
     public function __get($property) {
         if (property_exists($this, $property)) {
@@ -18,6 +15,5 @@ class Client{
         if (property_exists($this, $property)) {
             $this->$property = $value;
         }
-    
     }
 }
