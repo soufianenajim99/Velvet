@@ -29,7 +29,6 @@ class Core{
 
       $this->params = $url ? array_values($url) : [];
     
-
       call_user_func_array([$this->curCont, $this->curmet], $this->params);
 
 }

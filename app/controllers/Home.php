@@ -1,9 +1,9 @@
 <?php
 
 class Home extends Controller {
-    private $Homeser;
+    // private $Homeser;
     public function __construct(){
-        $this->Homeser= $this->service("UsersService");
+        // $this->Homeser= $this->service("UsersService");
     }
 
     public function index(){
