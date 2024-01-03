@@ -13,11 +13,11 @@
 <body>
     <div class="h-screen md:flex">
         <div
-        class="relative  overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-black to-gray-700  justify-around items-center hidden">
+            class="relative  overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-black to-gray-700  justify-around items-center hidden">
 
-            
+
             <div>
-                <img src="<?=URLROOT?>public/images/logo.png" class="w-36 h-12">
+                <img src="<?= URLROOT ?>public/images/logo.png" class="w-36 h-12">
                 <p class="text-white mt-1">The most popular peer to peer lending at SEA</p>
                 <a href="./login.php"
                     class="text-center block w-28 bg-white text-gray-800 mt-4 py-2 rounded-2xl font-bold mb-2">
