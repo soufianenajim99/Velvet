@@ -81,11 +81,17 @@
 
                 <div class="mt-8 bg-white p-4 shadow rounded-lg">
                     <div class="bg-white p-4 rounded-md mt-4">
+                    <div class="text-right mt-4">
+                            <button class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded">
+                                add category
+                            </button>
+                        </div>
                         <h2 class="text-gray-500 text-lg font-semibold pb-4">Categories</h2>
+                        
                         <div class="my-1"></div>
                         <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
 
-                        <table class="w-full table-auto text-sm">
+                        <table class="w-full table-auto text-sm text-center">
                             <thead>
                                 <tr class="text-sm leading-normal">
                                     <th
@@ -95,10 +101,10 @@
                                         class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">
                                         date</th>
                                     <th
-                                        class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light text-right">
+                                        class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light ">
                                         total</th>
                                     <th
-                                        class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light text-right">
+                                        class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light ">
                                         action</th>
                                 </tr>
                             </thead>
@@ -106,8 +112,8 @@
                                 <tr class="hover:bg-grey-lighter">
                                     <td class="py-2 px-16 border-b border-grey-light">Carlos Sánchez</td>
                                     <td class="py-2 px-16 border-b border-grey-light">27/07/2023</td>
-                                    <td class="py-2 px-16 border-b border-grey-light text-right">$1500</td>
-                                    <td><button type="button" data-modal-toggle="product-modal">
+                                    <td class="py-2 px-16 border-b border-grey-light ">$1500</td>
+                                    <td class="flex justify-center"><button type="button" data-modal-toggle="product-modal">
 
                                             <svg class="w-6 h-6 text-gray-800 dark:text-gray-500" aria-hidden="true"
                                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -132,11 +138,7 @@
                             </tbody>
                         </table>
 
-                        <div class="text-right mt-4">
-                            <button class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded">
-                                add category
-                            </button>
-                        </div>
+                     
                     </div>
                 </div>
 
