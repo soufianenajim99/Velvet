@@ -1,6 +1,6 @@
 <?php
 
-class Client extends Users{
+class Client{
     private $Id_client;
     private $Id_user;
 
