@@ -14,4 +14,12 @@ class Admin extends Controller {
         $this->view("admin/products");
     }
 
+    public function categories(){
+        $this->view("admin/categories");
+    }
+
+    public function users(){
+        $this->view("admin/users");
+    }
+
 }
