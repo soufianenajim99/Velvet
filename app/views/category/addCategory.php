@@ -14,7 +14,7 @@
         <h2 class="text-2xl font-semibold mb-4">Add Category</h2>
 
         <!-- Category Form -->
-        <form action="#" method="POST">
+        <form action="" method="POST">
             <!-- Category Name Input -->
             <div class="mb-4">
                 <label for="categoryName" class="block text-gray-700 text-sm font-bold mb-2">Category Name:</label>
