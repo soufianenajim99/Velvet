@@ -10,10 +10,10 @@
 
 <body>
     <div class="flex bg-gray-100">
-    <div class="flex flex-col h-screen bg-gray-100">
+        <div class="flex flex-col h-screen bg-gray-100">
 
 
-        <!-- <div class="bg-white text-white shadow w-full p-2 flex items-center justify-between">
+            <!-- <div class="bg-white text-white shadow w-full p-2 flex items-center justify-between">
             <div class="flex items-center">
                 <div class="flex items-center">
                     <img src="logo.png" alt="Logo" class="w-28 h-18 mr-2">
@@ -36,47 +36,47 @@
             </div>
         </div> -->
 
-        <div class="flex-1 flex flex-wrap">
-            <div class="p-2 bg-white w-full md:w-60 flex flex-col md:flex hidden" id="sideNav">
-                <nav><a class="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white"
-                        href="index.php">
-                        <i class="fas fa-home mr-2"></i>dashboard
-                    </a>
-                    <a class="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white"
-                        href="users.php">
-                        <i class="fas fa-users mr-2"></i>Users
+            <div class="flex-1 flex flex-wrap">
+                <div class="p-2 bg-white w-full md:w-60 flex flex-col md:flex hidden" id="sideNav">
+                    <nav><a class="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white"
+                            href="index.php">
+                            <i class="fas fa-home mr-2"></i>dashboard
+                        </a>
+                        <a class="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white"
+                            href="users.php">
+                            <i class="fas fa-users mr-2"></i>Users
+                        </a>
+
+                        <a class="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white"
+                            href="categories.php">
+                            <i class="fas fa-file-alt mr-2"></i>Categories
+                        </a>
+
+                        <a class="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white"
+                            href="products.php">
+                            <i class="fas fa-store mr-2"></i>Products
+                        </a>
+                        <a class="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white"
+                            href="orders.php">
+                            <i class="fas fa-store mr-2"></i>orders
+                        </a>
+                    </nav>
+
+                    <a class="block text-gray-500 py-2.5 px-4 my-2 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white mt-auto"
+                        href="#">
+                        <i class="fas fa-sign-out-alt mr-2"></i>logout
                     </a>
 
-                    <a class="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white"
-                        href="categories.php">
-                        <i class="fas fa-file-alt mr-2"></i>Categories
-                    </a>
 
-                    <a class="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white"
-                        href="products.php">
-                        <i class="fas fa-store mr-2"></i>Products
-                    </a>
-                    <a class="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white"
-                        href="orders.php">
-                        <i class="fas fa-store mr-2"></i>orders
-                    </a>
-                </nav>
-
-                <a class="block text-gray-500 py-2.5 px-4 my-2 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white mt-auto"
-                    href="#">
-                    <i class="fas fa-sign-out-alt mr-2"></i>logout
-                </a>
+                </div>
 
 
             </div>
-
-
         </div>
-</div>
 
 
 
-        <div class="mt-8 bg-white p-4 shadow rounded-lg">
+        <div class="mt-8 bg-white p-4 shadow rounded-lg mx-auto h-1/2">
             <h2 class="text-gray-500 text-lg font-semibold pb-4">products</h2>
             <div class="my-1"></div>
             <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
@@ -137,8 +137,8 @@
 
 
     </div>
-    
-</div>
+
+    </div>
 
 </body>
 
