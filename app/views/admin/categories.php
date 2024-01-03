@@ -81,13 +81,16 @@
 
                 <div class="mt-8 bg-white p-4 shadow rounded-lg">
                     <div class="bg-white p-4 rounded-md mt-4">
-                    <div class="text-right mt-4">
+                        <div class="text-right mt-4">
                             <button class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded">
-                                add category
+                                <a href="<?=URLROOT?>category/addCategory">
+
+                                    add category
+                                </a>
                             </button>
                         </div>
                         <h2 class="text-gray-500 text-lg font-semibold pb-4">Categories</h2>
-                        
+
                         <div class="my-1"></div>
                         <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
 
@@ -113,7 +116,8 @@
                                     <td class="py-2 px-16 border-b border-grey-light">Carlos Sánchez</td>
                                     <td class="py-2 px-16 border-b border-grey-light">27/07/2023</td>
                                     <td class="py-2 px-16 border-b border-grey-light ">$1500</td>
-                                    <td class="flex justify-center"><button type="button" data-modal-toggle="product-modal">
+                                    <td class="flex justify-center"><button type="button"
+                                            data-modal-toggle="product-modal">
 
                                             <svg class="w-6 h-6 text-gray-800 dark:text-gray-500" aria-hidden="true"
                                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -138,7 +142,7 @@
                             </tbody>
                         </table>
 
-                     
+
                     </div>
                 </div>
 
