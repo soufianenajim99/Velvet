@@ -86,7 +86,7 @@
                         </div>
                     </div>
                     <button
-                        class="mt-6 w-full rounded-md bg-black py-1.5 font-medium text-gray-600 hover:bg-gray-600">Check
+                        class="mt-6 w-full rounded-md bg-black py-1.5 font-medium text-white hover:bg-gray-800">Check
                         out</button>
                 </div>
             </div>
