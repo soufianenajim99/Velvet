@@ -22,7 +22,7 @@ class Database
   public static function getInstance()
   {
     if (!self::$instance) {
-      self::$instance = new Database();
+      self::$instance = new self();
     }
 
     return self::$instance;
@@ -31,5 +31,5 @@ class Database
   {
     return $this->dbh;
   }
-  
+
 }
