@@ -40,33 +40,44 @@ class ProductService {
 
      public function deleteproduct($productId){
         $conn = $this->conn;
-        $deleteproduct = "DELETE from product where id = :productId";
+        $deleteproduct = "DELETE from product where Id_product = :productId";
         $results =$conn->prepare($deleteproduct);
         $results->bindparam(":productId",$productId,PDO::PARAM_INT);
         $results->execute();
      }
      
-     public function updateproduct(product $updatedproduct) {
+     public function updateproduct(product $updatedproduct ,$id) {
         $conn = $this->conn;
         
-             $product_name = $updatedproduct->product_name;
-             $product_price = $updatedproduct->product_price;
-             $product_descr = $updatedproduct->product_descr;
-             $id = $updatedproduct->Id;
+
+             $product_name = $updatedproduct->Product_name;
+             $product_price = $updatedproduct->Product_price;
+             $product_descr = $updatedproduct->Product_descr;
+             $product_logo = $updatedproduct->Product_logo;
      
-             $sql = "UPDATE product SET product_name = :product_name, product_price = :product_price, product_descr = :product_descr ,product_logo =:product_logo ,Id_category=:Id_category WHERE id = :id";
+             $sql = "UPDATE product SET product_name = :product_name, product_price = :product_price, product_descr = :product_descr ,product_logo =:product_logo WHERE Id_product = :id";
              $results = $conn->prepare($sql);
 
-             $results->bindParam(":product_name", $product_name,PDO::PARAM_INT);
-             $results->bindparam(":product_price", $product_price,PDO::PARAM_INT);
-             $results->bindparam(":product_descr", $product_descr,PDO::PARAM_INT);
+             $results->bindParam(":product_name", $product_name,PDO::PARAM_STR);
+             $results->bindparam(":product_price", $product_price,PDO::PARAM_STR);
+             $results->bindparam(":product_descr", $product_descr,PDO::PARAM_STR);
+             $results->bindparam(":product_logo", $product_logo,PDO::PARAM_STR);
              $results->bindparam(":id",$id,PDO::PARAM_INT); 
              
              $results->execute();
              
      }
      
-     
+     public function getProduct($id){
+      $conn = $this->conn;
+      $query = "SELECT * FROM product WHERE Id_product = :id";
+      $result = $conn->prepare($query);
+      $result->execute([
+          ":id"=> $id
+      ]);
+      $product = $result->fetch(PDO::FETCH_OBJ);
+      return $product;
+  }
  
 }
 

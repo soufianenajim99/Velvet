@@ -45,4 +45,50 @@ class Product extends Controller
 
         $this->view("products/addproduct", $data);
     }
+
+
+    public function deleteproduct($id){
+        $this->productService = new ProductService();
+        try{
+            $this->productService->deleteproduct($id);
+            header("Location:".URLROOT."admin/products");
+
+        }catch(PDOException $e){
+            die($e->getMessage());
+           }
+    }
+
+    public function updateproduct($id){
+        $this->productService = new ProductService();
+        $prodshow= $this->productService->getProduct($id);
+        if($_SERVER["REQUEST_METHOD"] == "POST" ){
+            $Name = $_POST["ProductsName"];
+            $Descr = $_POST["ProductDescription"];
+            $price = $_POST["ProductPrice"];
+            $img = $_FILES["image"]["name"];
+            $tempname = $_FILES["image"]["tmp_name"];
+            // $category = $_POST["Category"];
+
+
+            $newProduct = new Product();
+            $newProduct->Product_name = $Name;
+            $newProduct->Product_descr = $Descr;
+            $newProduct->Product_price = $price;
+            $newProduct->Product_logo = URLROOT."public/images/".$img;
+            // $newProduct->Id_category = $category;
+                       try{
+                        $this->productService->updateproduct( $newProduct , $id );
+                        header("Location:".URLROOT."admin/products");
+                       }
+                       catch(PDOException $e){
+                        die($e->getMessage());
+                       }
+                    }
+        $data=[
+            "prod"=> $prodshow
+        ];
+        $this->view("Products/updateproduct", $data);
+
+    }
+
 }
