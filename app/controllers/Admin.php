@@ -6,12 +6,14 @@ class Admin extends Controller
     private $CategoryService;
     private $ProductService;
     private $ClientService;
+    private $AdminService;
 
     public function __construct()
     {
         $this->CategoryService = new CategoryService();
         $this->ClientService = new ClientService();
         $this->ProductService = new ProductService();
+        $this->AdminService = new AdminService();
     }
 
     public function index()
@@ -41,8 +43,9 @@ class Admin extends Controller
 
     public function users()
     {
+      $ads=$this->AdminService->displayAdmin();
         $clis=$this->ClientService->displayClient();
-        $data=["clis"=>$clis];
+        $data=["clis"=>$clis,"ads"=>$ads];
         $this->view("admin/users",$data);
     }
 }
