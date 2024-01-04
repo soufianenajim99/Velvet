@@ -1,4 +1,3 @@
-
 <?php
 
 
@@ -17,7 +16,6 @@ $this->conn = $this->db->getConnection();
 }
 public function displayCategory(){
     $conn = $this->conn;
-
     $query = "SELECT * FROM category";
     $result = $conn->prepare($query);
     $result->execute();
@@ -52,11 +50,22 @@ public function updateCategory(Category $category,$id){
 public function deleteCategory($id){
 
     $conn = $this->conn;
-    $query = "DELETE FROM catgory WHERE Id_category = :id";
+    $query = "DELETE FROM category WHERE Id_category = :id";
     $results =$conn->prepare($query);
     $results->bindparam(":id",$id,PDO::PARAM_INT);
     $results->execute();
 
+}
+
+public function getCategory($id){
+    $conn = $this->conn;
+    $query = "SELECT * FROM category WHERE Id_category = :id";
+    $result = $conn->prepare($query);
+    $result->execute([
+        ":id"=> $id
+    ]);
+    $category = $result->fetch(PDO::FETCH_OBJ);
+    return $category;
 }
 
 
@@ -64,4 +73,3 @@ public function deleteCategory($id){
 }
 
 ?>
-
