@@ -3,9 +3,11 @@
 class Admin extends Controller {
     
     private $CategoryService;
+    private $ClientService;
 
     public function __construct(){
         $this->CategoryService = new CategoryService();
+        $this->ClientService = new ClientService();
     }
 
     public function index(){
@@ -24,7 +26,9 @@ class Admin extends Controller {
     }
 
     public function users(){
-        $this->view("admin/users");
+        $clis=$this->ClientService->displayClient();
+        $data=["clis"=>$clis];
+        $this->view("admin/users",$data);
     }
 
 }

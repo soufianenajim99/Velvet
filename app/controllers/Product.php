@@ -8,7 +8,6 @@ class Product extends Controller {
     }
 
     public function addproduct(){
-        echo"test";
         $this->productService = new productService();
         if($_SERVER["REQUEST_METHOD"] == "POST" ){
             $Name = $_POST["ProductsName"];

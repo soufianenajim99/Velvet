@@ -137,12 +137,12 @@
                         </tbody>
                     </table>
                     <div class="text-right mt-4">
-                    <button class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded">
-                                <a href="<?=URLROOT?>products/addproduct">
+                        <button class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded">
+                            <a href="<?=URLROOT?>product/addproduct">
 
-                                    add product
-                                </a>
-                            </button>
+                                add product
+                            </a>
+                        </button>
                     </div>
                 </div>
 
