@@ -134,11 +134,6 @@
                             foreach ($data["prod"] as $product) :
                             ?>
 
-
-
-
-
-
                                 <tr class="text-sm leading-normal">
                                     <td class="py-2 px-4 border-b border-grey-light"><?= $product->Id_product ?></td>
                                     <td class="py-2 px-4 border-b border-grey-light"><?= $product->Product_name ?></td>

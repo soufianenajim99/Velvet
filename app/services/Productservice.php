@@ -21,9 +21,10 @@ class ProductService {
     }
     public function getCatProd(){
         $conn = $this->conn;
-        $query = "SELECT product.*, category.*
-          FROM product
-          JOIN category ON product.Id_category = category.Id_category";
+        $query = "SELECT DISTINCT product.*, category.*
+        FROM product
+        JOIN category ON product.Id_category = category.Id_category";
+
 
         $result=$conn->prepare($query);
         $result->execute();
