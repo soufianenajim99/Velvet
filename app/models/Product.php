@@ -8,13 +8,13 @@ class Product {
     private $Product_logo;
     private $Id_category;
 
-    public function __construct($Id_product, $Name_product, $Description_product, $Price_product, $Id_category,$Product_logo) {
+    public function __construct($Id_product, $Product_name, $Product_descr, $Product_price, $Id_category,$Product_logo) {
         $this->Id_product = $Id_product;
-        $this->Name_product = $Name_product;
-        $this->Description_product = $Description_product;
-        $this->Price_product = $Price_product;
-        $this->Id_category = $Id_category;
+        $this->Product_name = $Product_name;
+        $this->Product_descr = $Product_descr;
+        $this->Product_price = $Product_price;
         $this->Product_logo = $Product_logo;
+        $this->Id_category = $Id_category;
     }
 
     public function __get($property) {

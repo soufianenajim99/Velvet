@@ -1,21 +1,23 @@
 <?php
 
-class Admin extends Controller {
-    
+class Admin extends Controller
+{
+
     private $CategoryService;
+    private $ProductService;
+    private $ClientService;
+    private $AdminService;
     private $UsersService;
-    private $ProductsService;
-    private $CommandeService;
+    
 
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->CategoryService = new CategoryService();
-        $this->UsersService = new UsersService();
-        $this->ProductsService = new ProductService();
-        $this->CommandeService = new CommandeService();
     }
 
-    public function index(){
+    public function index()
+    {
         $users=$this->UsersService->countusers();
         $products=$this->ProductsService->countproducts();
         $commande=$this->CommandeService->countcommandes();
@@ -26,18 +28,36 @@ class Admin extends Controller {
     }
 
 
-    public function products(){
-        $this->view("admin/products");
+    // public function products()
+    // {
+    //     $this->view("admin/products");
+    // }
+
+    public function categories()
+    {
+        $cats = $this->CategoryService->displayCategory();
+        $data = ["cats" => $cats];
+        $this->view("admin/categories", $data);
+    }
+    
+    public function products()
+    {
+        $products = $this->ProductService->getAllproduct();
+        $data = ["prod" => $products];
+        $this->view("admin/products", $data);
+    }
+    public function product()
+    {
+        $Catprod = $this->ProductService->getCatProd();
+        $data = ["CatProd" => $Catprod];
+        $this->view("client/product", $data);
     }
 
-    public function categories(){
-    $cats=$this->CategoryService->displayCategory();
-    $data=["cats"=>$cats];
-    $this->view("admin/categories",$data);
+    public function users()
+    {
+      $ads=$this->AdminService->displayAdmin();
+        $clis=$this->ClientService->displayClient();
+        $data=["clis"=>$clis,"ads"=>$ads];
+        $this->view("admin/users",$data);
     }
-
-    public function users(){
-        $this->view("admin/users");
-    }
-
 }

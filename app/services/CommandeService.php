@@ -20,7 +20,7 @@ class CommandeService {
         return $commande;
     }
 
-    
+
     public function addcommande(commande $commande){
         $conn = $this->conn;
         $addcommandeQuery = "INSERT INTO `commande`(`Id_commandeline`,`Id_product`,`Id_commande`,`Qte_commande`) VALUES (:Id_commandeline,:Id_product,:Id_commande,:Qte_commande)" ;
