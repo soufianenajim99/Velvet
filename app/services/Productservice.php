@@ -23,13 +23,17 @@ class ProductService {
     
     public function addproduct(product $product){
         $conn = $this->conn;
-        $addproductQuery = "INSERT INTO `product`(`Product_name`,`product_descr`,`Product_price`,`product_logo`,`Id_category`) VALUES (:Product_name,:product_descr,:Product_price,:product_logo,:Id_category)" ;
+        
+        $addproductQuery = "INSERT INTO `product`(`Product_name`,`Product_descr`,`Product_price`,`Product_logo`,`Id_category`) 
+        VALUES (:Product_name, :Product_descr, :Product_price, :product_logo, :Id_category)";
+        
         $result = $conn->prepare($addproductQuery);
-        $result->bindParam(":Product_name",$product->Name_product);
-        $result->bindParam(":Product_price",$product->Price_product);
-        $result->bindParam(":Product_descr",$product->Description_product);
-        $result->bindParam(":product_logo",$product->product_logo);
-        $result->bindParam(":Id_category",$product->Id_category);
+        $result->bindParam(":Product_name", $product->Product_name);
+        $result->bindParam(":Product_descr", $product->Product_descr);
+        $result->bindParam(":Product_price", $product->Product_price);
+        $result->bindParam(":product_logo", $product->Product_logo);
+        $result->bindParam(":Id_category", $product->Id_category);
+        
   
      $result->execute();
      }

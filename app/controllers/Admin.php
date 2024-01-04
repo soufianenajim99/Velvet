@@ -1,30 +1,44 @@
 <?php
 
-class Admin extends Controller {
-    
-    private $CategoryService;
+class Admin extends Controller
+{
 
-    public function __construct(){
+    private $CategoryService;
+    private $ProductService;
+
+    public function __construct()
+    {
         $this->CategoryService = new CategoryService();
+        $this->ProductService = new ProductService();
     }
 
-    public function index(){
+    public function index()
+    {
         $this->view("admin/index");
     }
 
 
-    public function products(){
-        $this->view("admin/products");
+    // public function products()
+    // {
+    //     $this->view("admin/products");
+    // }
+
+    public function categories()
+    {
+        $cats = $this->CategoryService->displayCategory();
+        $data = ["cats" => $cats];
+        $this->view("admin/categories", $data);
+    }
+    public function products()
+    {
+        $products = $this->ProductService->getAllproduct();
+        $data = ["prod" => $products];
+        $this->view("admin/products", $data);
     }
 
-    public function categories(){
-    $cats=$this->CategoryService->displayCategory();
-    $data=["cats"=>$cats];
-    $this->view("admin/categories",$data);
-    }
 
-    public function users(){
+    public function users()
+    {
         $this->view("admin/users");
     }
-
 }
