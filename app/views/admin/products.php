@@ -78,12 +78,20 @@
             <div class="flex-1 p-4 w-full md:w-1/2">
 
 
+                <div class="text-right mt-4">
+                    <button class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded">
+                        <a href="<?= URLROOT ?>product/addproduct">
 
-                <div class="mt-8 bg-white p-4 shadow rounded-lg mx-auto h-1/2">
+                            add product
+                        </a>
+                    </button>
+                </div>
+                <div class="mt-8 bg-white p-4 shadow rounded-lg mx-auto min-h-1/2">
+
                     <h2 class="text-gray-500 text-lg font-semibold pb-4">products</h2>
                     <div class="my-1"></div>
                     <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
-                    <table class="w-full table-auto text-sm">
+                    <table class="w-full table-auto text-sm text-center">
                         <thead class="text-sm leading-normal">
                             <tr>
                                 <th
@@ -96,6 +104,10 @@
                                 </th>
                                 <th
                                     class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">
+                                    logo
+                                </th>
+                                <th
+                                    class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">
                                     desc
                                 </th>
                                 <th
@@ -104,46 +116,59 @@
                                 </th>
                                 <th
                                     class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">
-                                    ation
+                                    action
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="text-sm leading-normal">
-                                <td class="py-2 px-4 border-b border-grey-light">9292929</td>
-                                <td class="py-2 px-16 border-b border-grey-light"><img src="" alt="image"></td>
-                                <td class="py-2 px-16 border-b border-grey-light">Comercio</td>
-                                <td class="py-2 px-16 border-b border-grey-light">29£</td>
-                                <td class="py-2 px-16 border-b border-grey-light">
-                                    <button type="button" data-modal-toggle="product-modal">
+                            <?php
 
-                                        <svg class="w-6 h-6 text-gray-800 dark:text-gray-500" aria-hidden="true"
-                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
-                                            <path
-                                                d="M12.687 14.408a3.01 3.01 0 0 1-1.533.821l-3.566.713a3 3 0 0 1-3.53-3.53l.713-3.566a3.01 3.01 0 0 1 .821-1.533L10.905 2H2.167A2.169 2.169 0 0 0 0 4.167v11.666A2.169 2.169 0 0 0 2.167 18h11.666A2.169 2.169 0 0 0 16 15.833V11.1l-3.313 3.308Zm5.53-9.065.546-.546a2.518 2.518 0 0 0 0-3.56 2.576 2.576 0 0 0-3.559 0l-.547.547 3.56 3.56Z" />
-                                            <path
-                                                d="M13.243 3.2 7.359 9.081a.5.5 0 0 0-.136.256L6.51 12.9a.5.5 0 0 0 .59.59l3.566-.713a.5.5 0 0 0 .255-.136L16.8 6.757 13.243 3.2Z" />
-                                        </svg>
+                            foreach ($data["prod"] as $product) :
+                            ?>
+
+
+
+
+
+
+                            <tr class="text-sm leading-normal">
+                                <td class="py-2 px-4 border-b border-grey-light"><?= $product->Id_product ?></td>
+                                <td class="py-2 px-4 border-b border-grey-light"><?= $product->Product_name ?></td>
+                                <td class="py-2 px-16 border-b border-grey-light flex justify-center"><img
+                                        class="h-[50px] w-[100px]" src="<?= $product->Product_logo ?>" alt="image"></td>
+                                <td class="py-2 px-16 border-b border-grey-light"><?= $product->Product_descr ?></td>
+                                <td class="py-2 px-16 border-b border-grey-light"><?= $product->Product_price ?></td>
+                                <td class="flex justify-center">
+                                    <button type="button" data-modal-toggle="product-modal">
+                                        <a href="<?= URLROOT ?>product/updateproduct/<?= $product->Id_product ?>">
+
+                                            <svg class="w-6 h-6 text-gray-800 dark:text-gray-500" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 20 18">
+                                                <path
+                                                    d="M12.687 14.408a3.01 3.01 0 0 1-1.533.821l-3.566.713a3 3 0 0 1-3.53-3.53l.713-3.566a3.01 3.01 0 0 1 .821-1.533L10.905 2H2.167A2.169 2.169 0 0 0 0 4.167v11.666A2.169 2.169 0 0 0 2.167 18h11.666A2.169 2.169 0 0 0 16 15.833V11.1l-3.313 3.308Zm5.53-9.065.546-.546a2.518 2.518 0 0 0 0-3.56 2.576 2.576 0 0 0-3.559 0l-.547.547 3.56 3.56Z" />
+                                                <path
+                                                    d="M13.243 3.2 7.359 9.081a.5.5 0 0 0-.136.256L6.51 12.9a.5.5 0 0 0 .59.59l3.566-.713a.5.5 0 0 0 .255-.136L16.8 6.757 13.243 3.2Z" />
+                                            </svg>
+                                        </a>
+
                                     </button>
                                     <button type="button" data-modal-toggle="delete-product-modal">
-                                        <svg class="w-6 h-6 text-gray-800 dark:text-gray-500" aria-hidden="true"
-                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
-                                            <path
-                                                d="M17 4h-4V2a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v2H1a1 1 0 0 0 0 2h1v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1a1 1 0 1 0 0-2ZM7 2h4v2H7V2Zm1 14a1 1 0 1 1-2 0V8a1 1 0 0 1 2 0v8Zm4 0a1 1 0 0 1-2 0V8a1 1 0 0 1 2 0v8Z" />
-                                        </svg>
+                                        <a href="<?= URLROOT ?>product/deleteproduct/<?= $product->Id_product ?>">
+                                            <svg class="w-6 h-6 text-gray-800 dark:text-gray-500" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 18 20">
+                                                <path
+                                                    d="M17 4h-4V2a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v2H1a1 1 0 0 0 0 2h1v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1a1 1 0 1 0 0-2ZM7 2h4v2H7V2Zm1 14a1 1 0 1 1-2 0V8a1 1 0 0 1 2 0v8Zm4 0a1 1 0 0 1-2 0V8a1 1 0 0 1 2 0v8Z" />
+                                            </svg>
+                                        </a>
                                     </button>
                                 </td>
                             </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
-                    <div class="text-right mt-4">
-                        <button class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded">
-                            <a href="<?=URLROOT?>product/addproduct">
 
-                                add product
-                            </a>
-                        </button>
-                    </div>
                 </div>
 
             </div>

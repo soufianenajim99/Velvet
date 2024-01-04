@@ -36,15 +36,30 @@
                     placeholder="Enter Product description"
                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"></input>
             </div>
+
+            <!-- Category -->
+
+
+            <label for="">Categorys</label>
+            <select name="Category"
+                class="block  py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                <option value="">Select Category</option>
+                <?php foreach ($data["category"] as $category) {
+                    echo " 
+                                       <option value = '$category->Id_category'>$category->Name_cate</option>
+                                    ";
+                } ?>
+            </select>
+
+            <!-- images -->
             <div class="mb-4">
 
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="user_avatar">Upload
-                    file</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white mt-4"
+                    for="user_avatar">Upload file</label>
                 <input name="image"
                     class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                     aria-describedby="Products_image" id="Products_image" type="file">
             </div>
-
 
             <!-- Submit Button -->
             <div class="flex justify-end">
