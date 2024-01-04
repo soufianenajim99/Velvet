@@ -12,8 +12,7 @@ class Product extends Controller
         $this->categoryservice = new CategoryService();
     }
 
-    public function addproduct()
-    {
+    public function addproduct(){
         $cat =  $this->categoryservice->displayCategory();
         $this->productService = new productService();
 

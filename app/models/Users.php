@@ -1,11 +1,11 @@
 <?php
 class Users{
-    private $id;
-    private $FullName;
-    private $username;
-    private $Password;
-    private $Adresse;
-    private $Email;
+    protected $id;
+    protected $FullName;
+    protected $username;
+    protected $Password;
+    protected $Adresse;
+    protected $Email;
 
     public function __construct($id, $FullName, $username, $Password, $Adresse, $Email){
         $this->id = $id;
