@@ -2,8 +2,13 @@
 
 class Client extends Controller {
     private $Homeser;
+    private $ProductService;
+    
+
     public function __construct(){
         $this->Homeser= $this->service("UsersService");
+        $this->ProductService = new ProductService();
+
     }
 
     public function index($id){
@@ -13,7 +18,9 @@ class Client extends Controller {
 
 
     public function product(){
-        $this->view("client/product");
+        $Catprod = $this->ProductService->getCatProd();
+        $data = ["CatProd" => $Catprod];
+        $this->view("client/product", $data);
     }
 
     public function Basket(){

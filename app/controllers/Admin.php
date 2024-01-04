@@ -31,13 +31,19 @@ class Admin extends Controller
         $data = ["cats" => $cats];
         $this->view("admin/categories", $data);
     }
+    
     public function products()
     {
         $products = $this->ProductService->getAllproduct();
         $data = ["prod" => $products];
         $this->view("admin/products", $data);
     }
-
+    public function product()
+    {
+        $Catprod = $this->ProductService->getCatProd();
+        $data = ["CatProd" => $Catprod];
+        $this->view("client/product", $data);
+    }
 
     public function users()
     {
