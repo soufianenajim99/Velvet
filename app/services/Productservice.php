@@ -61,7 +61,13 @@ class ProductService {
              $results->execute();
              
      }
-     
+     public function countproducts()
+    {
+        $conn=$this->conn;
+        $query=$conn->query("SELECT COUNT(Id_product) AS countp FROM product");
+        $productscount= $query->fetch(PDO::FETCH_OBJ);
+        return $productscount;
+    }
      
  
 }

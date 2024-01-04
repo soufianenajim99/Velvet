@@ -20,7 +20,6 @@ class UsersService
         return $result;
     }
 
-
     public function addusers(users $users, $FullName, $username, $Adresse, $Email, $password)
     {
         $conn = $this->conn;
@@ -67,6 +66,13 @@ class UsersService
         $results->execute();
 
     }
-
+    public function countusers()
+    {
+        $conn=$this->conn;
+        $query=$conn->query("SELECT COUNT(id_client) AS countu FROM client;");
+        $Userscount= $query->fetch(PDO::FETCH_OBJ);
+        return $Userscount;
+    }
+    
 
 }

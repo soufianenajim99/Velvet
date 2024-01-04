@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,6 +10,7 @@
 </head>
 
 <body class="bg-gray-100">
+    
     <div class="flex flex-col h-screen bg-gray-100">
 
         
@@ -75,7 +77,7 @@
                         <div class="my-1"></div> 
                         <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
                         <div class="">
-        <span class="py-2 px-8 bg-grey-lightest font-bold uppercase text-l text-grey-light ">000.000</span>
+        <span class="py-2 px-8 bg-grey-lightest font-bold uppercase text-l text-grey-light "><?= $data["users"]->countu ?></span>
         <h3 class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-gray-500 border-b border-grey-light">Active users</h3>
       </div>
                     </div>
@@ -84,7 +86,7 @@
                         <h2 class="text-gray-500 text-lg font-semibold pb-1">product</h2>
                         <div class="my-1"></div> 
                         <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
-                        <span class="py-2 px-16 bg-grey-lightest font-bold uppercase text-l text-grey-light ">000.000</span>
+                        <span class="py-2 px-16 bg-grey-lightest font-bold uppercase text-l text-grey-light "><?= $data["products"]->countp ?></span>
         <h3 class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-gray-500 border-b border-grey-light">Available products</h3>
       
                     </div>
@@ -93,7 +95,7 @@
                         <h2 class="text-gray-500 text-lg font-semibold pb-1">orders</h2>
                         <div class="my-1"></div> 
                         <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
-                        <span class="py-2 px-10 bg-grey-lightest font-bold uppercase text-l text-grey-light ">000.000</span>
+                        <span class="py-2 px-10 bg-grey-lightest font-bold uppercase text-l text-grey-light "><?= $data["commandes"]->counto ?></span>
         <h3 class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-gray-500 border-b border-grey-light">Latest orders</h3>
       
                     </div>
