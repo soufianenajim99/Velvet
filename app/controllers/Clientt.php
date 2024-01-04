@@ -49,7 +49,7 @@ class Clientt extends Controller {
 
     public function updateClient($id){
 
-        $this->ClientService = new ClientService();   
+        $this->ClientService = new ClientService(); 
         $clis=$this->ClientService->getClient($id); 
         if($_SERVER["REQUEST_METHOD"] == "POST" ){
             
@@ -66,7 +66,7 @@ class Clientt extends Controller {
             $newClient->Email = $Email ;
 
                        try{
-                        $this->ClientService->updateClient($newClient);
+                        $this->ClientService->updateClient($newClient,$id);
                         header("Location:".URLROOT."admin/users");
                        }
                        catch(PDOException $e){
@@ -76,8 +76,7 @@ class Clientt extends Controller {
         $data=[
             "clis"=> $clis
         ];
-        $this->view("admin/clientt/updateClient");
-
+        $this->view("admin/clientt/updateClient",$data);
 
     }
 

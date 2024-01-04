@@ -9,9 +9,7 @@
 </head>
 
 <body class="bg-gray-100 p-8">
-    <?php
-var_dump($data);
-?>
+
     <div class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
         <h2 class="text-2xl font-semibold mb-4">Update Client</h2>
 
