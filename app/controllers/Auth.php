@@ -11,6 +11,7 @@ class Auth extends Controller {
 
 
     public function signup(){
+
         $this->view("auth/signup");
     }
 
