@@ -30,7 +30,7 @@
             <div class="mb-4">
                 <label for="ProductDescription" class="block text-gray-700 text-sm font-bold mb-2">Products
                     Description:</label>
-                <input type="text" id="ProductDescription" name="ProductDescription" value="<?=$data["prod"]->Product_price?>" placeholder="Enter Product description" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"></input>
+                <input type="text" id="ProductDescription" name="ProductDescription" value="<?=$data["prod"]->Product_descr?>" placeholder="Enter Product description" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"></input>
             </div>
 
             <!-- Category -->

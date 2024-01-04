@@ -2,9 +2,17 @@
 <html lang="es">
 
 <head>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#dataTable').DataTable();
+        });
+    </script>
 
 </head>
 
@@ -78,7 +86,7 @@
                     <h2 class="text-gray-500 text-lg font-semibold pb-4">products</h2>
                     <div class="my-1"></div>
                     <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
-                    <table class="w-full table-auto text-sm text-center">
+                    <table id="dataTable" class="w-full table-auto text-sm text-center">
                         <thead class="text-sm leading-normal">
                             <tr>
                                 <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">
@@ -115,7 +123,7 @@
                                 <tr class="text-sm leading-normal">
                                     <td class="py-2 px-4 border-b border-grey-light"><?= $product->Id_product ?></td>
                                     <td class="py-2 px-4 border-b border-grey-light"><?= $product->Product_name ?></td>
-                                    <td class="py-2 px-16 border-b border-grey-light flex justify-center"><img class="h-[50px] w-[100px]" src="<?= $product->Product_logo ?>" alt="image"></td>
+                                    <td class="py-2 px-16 border-b border-grey-light flex justify-center"><img class="h-[60px] w-[70px]" src="<?= $product->Product_logo ?>" alt="image"></td>
                                     <td class="py-2 px-16 border-b border-grey-light"><?= $product->Product_descr ?></td>
                                     <td class="py-2 px-16 border-b border-grey-light"><?= $product->Product_price ?></td>
                                     <td class="flex justify-center">

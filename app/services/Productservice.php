@@ -19,6 +19,17 @@ class ProductService {
         $product=$result->fetchAll(PDO::FETCH_OBJ);
         return $product;
     }
+    public function getCatProd(){
+        $conn = $this->conn;
+        $query = "SELECT product.*, category.*
+          FROM product
+          JOIN category ON product.Id_category = category.Id_category";
+
+        $result=$conn->prepare($query);
+        $result->execute();
+        $CatProd=$result->fetchAll(PDO::FETCH_OBJ);
+        return $CatProd;
+    }
 
     
     public function addproduct(product $product){
