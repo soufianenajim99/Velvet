@@ -16,8 +16,8 @@ class CommandeService {
         $query="SELECT * FROM commande"; 
         $result=$conn->prepare($query);
         $result->execute();
-        $commande=$result->fetchAll(PDO::FETCH_OBJ);
-        return $commande;
+        $commandes=$result->fetchAll(PDO::FETCH_OBJ);
+        return $commandes;
     }
 
 
@@ -32,7 +32,13 @@ class CommandeService {
      $result->execute();
      }
 
-  
+     public function countcommandes()
+     {
+         $conn=$this->conn;
+         $query=$conn->query("SELECT COUNT(Id_commande) AS counto FROM commande");
+         $commandecount= $query->fetch(PDO::FETCH_OBJ);
+         return $commandecount;
+     }
  
 }
 
