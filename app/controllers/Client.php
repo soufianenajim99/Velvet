@@ -23,7 +23,12 @@ class Client extends Controller {
         $this->view("client/product", $data);
     }
 
-    public function Basket(){
-        $this->view("client/Basket");
+    public function Basket($id = 0){
+
+       $products = $this->ProductService->basket();
+        $this->ProductService->addTobasketOfProduct($id);
+
+       $data = ["product" => $products];
+        $this->view("client/Basket",$data);
     }
 }

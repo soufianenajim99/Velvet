@@ -8,8 +8,7 @@ class Clientt extends Controller {
     }
 
     public function index($id){
-        $data=$this->Homeser->getusers();
-        $this->view("Home/index", $data);
+        $this->view("Home/index");
     }
 
     public function addClient(){
