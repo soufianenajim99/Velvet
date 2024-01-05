@@ -55,6 +55,10 @@ class Auth extends Controller {
             }
         $this->view("auth/signup");
     }
+    public function SendEmail()
+    {
+        $this->view("auth/SendEmail");
+    }
 
 
     public function createSession($user){
