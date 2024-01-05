@@ -7,10 +7,10 @@ class Adminn extends Controller {
         $this->AdminService = new AdminService();       
     }
 
-    public function index($id){
-        $data=$this->Homeser->getusers();
-        $this->view("Home/index", $data);
-    }
+    // public function index($id){
+    //     // $data=$this->Homeser->getusers();
+    //     $this->view("Home/index", $data);
+    // }
 
     public function addAdmin(){
         $this->AdminService = new AdminService();    

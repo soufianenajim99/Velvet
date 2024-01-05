@@ -42,10 +42,14 @@ class Admin extends Controller
     }
     public function product()
     {
+    
+        
+    
         $Catprod = $this->ProductService->getCatProd();
         $data = ["CatProd" => $Catprod];
         $this->view("client/product", $data);
     }
+    
 
     public function users()
     {
