@@ -21,6 +21,14 @@ class Facture {
         }
     
     }
+    public function getFacture($id) {
+        global $conn;
+
+        $query = $conn->query("SELECT * FROM product WHERE Id_product = '$id'");
+        $Facture = $query->fetch_array();
+
+        return $Facture; 
+    }
 
 }
 
