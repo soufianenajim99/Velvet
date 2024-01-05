@@ -95,6 +95,25 @@ class UsersService
         $results->execute([":Email"=> $Email]);
         $stmt= $results->fetch(PDO::FETCH_OBJ);
         $hashed_pass= $stmt->password;
-        return password_verify($password, $hashed_pass);
+        if(password_verify($password, $hashed_pass)){
+            return $stmt;
+        }else{
+            return false;
+        }
+    }
+
+
+    public function isClient($id){
+        $conn=$this->conn;
+        $query = "SELECT * FROM client WHERE Id_client=:id";
+        $results = $conn->prepare($query);
+        $results->execute([":id"=> $id]);
+        $results->fetch(PDO::FETCH_OBJ);
+
+        if(   $results->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
