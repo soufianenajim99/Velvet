@@ -95,6 +95,10 @@ class UsersService
         $results->execute([":Email"=> $Email]);
         $stmt= $results->fetch(PDO::FETCH_OBJ);
         $hashed_pass= $stmt->password;
-        return password_verify($password, $hashed_pass);
+        if(password_verify($password, $hashed_pass)){
+            return $stmt;
+        }else{
+            return false;
+        }
     }
 }

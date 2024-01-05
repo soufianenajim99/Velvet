@@ -15,7 +15,10 @@ class Auth extends Controller {
             $email=$_POST["email"];
             $password=$_POST["password"];
             if($this->UsersService->login($email,$password)){
-                header("Location:".URLROOT."client/product");
+               $this->createSession($this->UsersService->login($email,$password));
+
+            $this->view("auth/login");
+
          
         }else{
           echo "error";
@@ -51,6 +54,14 @@ class Auth extends Controller {
                        }
             }
         $this->view("auth/signup");
+    }
+
+
+    public function createSession($user){
+        $_SESSION["Id_client"] = $user->id;
+        $_SESSION["username"] = $user->username;
+        $_SESSION["email"] = $user->Email;
+        header("Location:".URLROOT."client/product");
     }
 
 

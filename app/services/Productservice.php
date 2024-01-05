@@ -128,7 +128,7 @@ class ProductService
 
     public function addTobasketOfProduct($id){
         $conn = $this->conn;
-        $query = "INSERT INTO panierofproduct (Id_Panier,Id_Product) VALUES ( 1 ,:id)";
+        $query = "INSERT INTO panierofproduct (Id_Panier,Id_Product) VALUES ( 7 ,:id)";
         $result = $conn->prepare($query);
         $result->bindparam(":id", $id, PDO::PARAM_INT);
 

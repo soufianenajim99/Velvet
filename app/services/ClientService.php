@@ -42,6 +42,9 @@ public function addClient(Users $user){
     INSERT INTO client (ID_client)
     VALUES (@userId);
 
+    INSERT INTO panier (id_panier)
+    VALUES (@userId);
+
     COMMIT;";
     $result = $conn->prepare($query);
     $result->execute([

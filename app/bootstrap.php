@@ -2,6 +2,7 @@
 
 require_once "config/config.php";
 require_once "helpers/redirect.php";
+session_start();
 
 function Autoloader($class) {
   $paths = [
