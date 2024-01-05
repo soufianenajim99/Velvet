@@ -67,6 +67,12 @@ class UsersService
         $results->execute();
 
     }
+    public function countusers(){
+        $conn=$this->conn;
+    $query=$conn->query("SELECT COUNT(Id_client) AS countu FROM client");
+    $Userscount= $query->fetch(PDO::FETCH_OBJ);
+    return $Userscount;
+    }
 
 
 }

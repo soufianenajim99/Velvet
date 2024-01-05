@@ -1,7 +1,3 @@
-<?php
-
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -96,12 +92,9 @@ session_start();
 
             <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                 <?php
-
-
                 foreach ($data["CatProd"] as $CatProd) :
-
                 ?>
-
+    <div class="flex flex-col">
                     <div class="group relative">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md  lg:aspect-none group-hover:opacity-75 lg:h-80">
                             <img src="<?= $CatProd->Product_logo ?>" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
@@ -109,29 +102,46 @@ session_start();
                         <div class="mt-4 flex justify-between">
                             <div>
                                 <h3 class="text-sm text-gray-700">
-                                    <a href="#">
+                                    <p>
 
 
 
                                         <span aria-hidden="true" class="absolute inset-0"></span>
                                         <?= $CatProd->Product_name ?>
-                                    </a>
+                                    </p>
                                 </h3>
                             </div>
                             <p class="text-sm font-bold  text-gray-900"><?= $CatProd->Product_price  ?> MAD</p>
                         </div>
-                           
-                            <a href="<?= URLROOT ?>client/deleteCategory/<?= $CatProd->Id_product ?>" class="bg-gradient-to-r  font-bold to-gray-500 from-black rounded-[5px] w-full h-[50px] text-white text-center mt-[4px] hover:bg-gray-800 ">
-                            Add To Panier</a>
-                    </div>
-                <?php
-                endforeach; ?>
+                        </div>
+
+                        <a href="<?= URLROOT ?>client/basket/<?= $CatProd->Id_product ?>">
+                            <button class="bg-gradient-to-r  font-bold to-gray-500 from-black rounded-[5px] w-full h-[50px] text-white text-center mt-[4px] hover:bg-gray-800 ">Add To Panier</button></a>
+
+                            </div>
+
+                <?php endforeach; ?>
 
 
             </div>
         </div>
     </div>
-  
+    <!-- <script>
+    function searchProducts() {
+        var searchQuery = document.getElementById('search-navbar').value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '<?= URLROOT ?>products/searchajax/' + searchQuery, true);
+       
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                document.getElementById('search-results').innerHTML = xhr.responseText;
+            }
+        };
+
+        xhr.send();
+    }
+</script> -->
 
 </body>
 

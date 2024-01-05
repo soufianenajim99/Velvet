@@ -36,6 +36,18 @@ class ProductService
         // shuffle($CatProd);
         return $CatProd;
     }
+    public function basket()
+    {
+        $conn = $this->conn;
+        $query = "SELECT product.* 
+        FROM product
+        JOIN panierofproduct ON panierofproduct.Id_product = product.Id_product
+        WHERE Id_Panier = 1";
+        $result = $conn->prepare($query);
+        $result->execute();
+        $product = $result->fetchAll(PDO::FETCH_OBJ);
+        return $product;
+    }
     public function searchajax($searchQuery)
     {
         $conn = $this->conn;
@@ -84,6 +96,7 @@ class ProductService
         $conn = $this->conn;
 
 
+
         $product_name = $updatedproduct->Product_name;
         $product_price = $updatedproduct->Product_price;
         $product_descr = $updatedproduct->Product_descr;
@@ -113,5 +126,24 @@ class ProductService
         return $product;
     }
 
-    public function displaybasket($id){}
+    public function addTobasketOfProduct($id){
+        $conn = $this->conn;
+        $query = "INSERT INTO panierofproduct (Id_Panier,Id_Product) VALUES ( 1 ,:id)";
+        $result = $conn->prepare($query);
+        $result->bindparam(":id", $id, PDO::PARAM_INT);
+
+        $result->execute();
+
+
+    }
+   
+
+  
+  public function countproducts(){
+    $conn=$this->conn;
+    $query=$conn->query("SELECT COUNT(Id_product) AS countp FROM product");
+    $productcount= $query->fetch(PDO::FETCH_OBJ);
+    return $productcount;
+  }
+ 
 }
