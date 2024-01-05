@@ -101,4 +101,19 @@ class UsersService
             return false;
         }
     }
+
+
+    public function isClient($id){
+        $conn=$this->conn;
+        $query = "SELECT * FROM client WHERE Id_client=:id";
+        $results = $conn->prepare($query);
+        $results->execute([":id"=> $id]);
+        $results->fetch(PDO::FETCH_OBJ);
+
+        if(   $results->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

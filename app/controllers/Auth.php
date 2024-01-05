@@ -14,8 +14,17 @@ class Auth extends Controller {
         if($_SERVER["REQUEST_METHOD"] == "POST" ){
             $email=$_POST["email"];
             $password=$_POST["password"];
-            if($this->UsersService->login($email,$password)){
-               $this->createSession($this->UsersService->login($email,$password));
+            $loggedInUser=$this->UsersService->login($email,$password);
+            if($loggedInUser){
+                if($this->UsersService->isClient($loggedInUser->id)){
+                    $this->createSession($this->UsersService->login($email,$password));
+                    header("Location:".URLROOT."client/product");
+                }else{
+                    $this->createSession($this->UsersService->login($email,$password));
+                    header("Location:".URLROOT."admin/products");
+
+                }
+
 
             $this->view("auth/login");
 
@@ -62,11 +71,26 @@ class Auth extends Controller {
 
 
     public function createSession($user){
-        $_SESSION["Id_client"] = $user->id;
+        $_SESSION["Id_user"] = $user->id;
         $_SESSION["username"] = $user->username;
         $_SESSION["email"] = $user->Email;
-        header("Location:".URLROOT."client/product");
+        // header("Location:".URLROOT."client/product");
     }
 
+    public function destroySession($user){
+            unset($_SESSION["Id_user"]);
+            unset($_SESSION["username"]);
+            unset($_SESSION["email"]);
+            session_destroy();
+        header("Location:".URLROOT."auth/login");
+    }
+    
+    public function islogged(){
+        if(isset($_SESSION["Id_user"])){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 }
