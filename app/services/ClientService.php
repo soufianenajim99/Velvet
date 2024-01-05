@@ -29,7 +29,7 @@ public function addClient(Users $user){
     $conn = $this->conn;
     $FullName =$user->FullName;
     $username =$user->username;
-    $Password =$user->Password;
+    $Password = password_hash($user->Password,PASSWORD_DEFAULT) ;
     $Adresse =$user->Adresse;
     $Email =$user->Email;
     $query = "START TRANSACTION;

@@ -68,5 +68,27 @@ class UsersService
 
     }
 
+    public function findUserByEmail($Email){
+        $conn=$this->conn;
+        $query = "SELECT * FROM users WHERE Email=:Email";
+        $results = $conn->prepare($query);
+        $results->execute([":Email"=> $Email]);
+        $stmt= $results->fetch(PDO::FETCH_OBJ);
+        if( $stmt->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
 
+        }
+
+    public function login( $Email, $password){
+        $conn = $this->conn;
+        $query = "SELECT * FROM users WHERE Email = :Email";
+        $results = $conn->prepare($query);
+        $results->execute([":Email"=> $Email]);
+        $stmt= $results->fetch(PDO::FETCH_OBJ);
+        $hashed_pass= $stmt->password;
+        return password_verify($password, $hashed_pass);
+    }
 }
