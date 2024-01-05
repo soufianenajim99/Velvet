@@ -137,7 +137,7 @@
                                 <tr class="text-sm leading-normal">
                                     <td class="py-2 px-4 border-b border-grey-light"><?= $product->Id_product ?></td>
                                     <td class="py-2 px-4 border-b border-grey-light"><?= $product->Product_name ?></td>
-                                    <td class="py-2 px-16 border-b border-grey-light flex justify-center"><img class="h-[50px] w-[100px]" src="<?= $product->Product_logo ?>" alt="image"></td>
+                                    <td class="py-2 px-16 border-b border-grey-light flex justify-center"><img class="h-[90px] w-[80px]" src="<?= $product->Product_logo ?>" alt="image"></td>
                                     <td class="py-2 px-16 border-b border-grey-light"><?= $product->Product_descr ?></td>
                                     <td class="py-2 px-16 border-b border-grey-light"><?= $product->Product_price ?></td>
                                     <td class="flex justify-center">

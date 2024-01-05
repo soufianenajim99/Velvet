@@ -90,4 +90,16 @@ class Product extends Controller
 
     }
 
+    public function searchajax($searchquery){
+   
+        $this->productService = new ProductService();
+     $search =   $this->productService->searchajax($searchquery);
+
+     $data=[
+        'search' =>$search
+     ];
+     $this->view("client/searchajax", $data);
+
+}
+
 }
